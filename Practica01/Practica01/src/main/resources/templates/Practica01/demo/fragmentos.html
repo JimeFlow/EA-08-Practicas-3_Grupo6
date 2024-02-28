@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Página de inicio</title>
+</head>
+<body>
+
+    <header th:replace="~{layout/plantilla :: header}"/>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/arboles">Ver árboles</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <section>
+        <h2>Formulario para agregar árboles</h2>
+        <form action="/agregar_arbol" method="POST">
+            <label for="nombre_arbol">Nombre Árbol:</label><br>
+            <input type="text" id="nombre_arbol" name="nombre_arbol"><br>
+
+            <label for="anos_madera">Dureza de Madera:</label><br>
+            <input type="text" id="anos_madera" name="anos_madera"><br>
+
+            <label for="tipo_frutos">Tipo de Frutos:</label><br>
+            <input type="text" id="tipo_frutos" name="tipo_frutos"><br>
+
+            <input type="submit" value="Agregar Árbol">
+        </form>
+    </section>
+
+    <!-- Sección para mostrar los árboles -->
+    <section>
+        <h2>Árboles Registrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre Árbol</th>
+                    <th>Dureza de Madera</th>
+                    <th>Tipo de Frutos</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se mostrarán los árboles registrados -->
+                <!-- Este código debe ser generado dinámicamente por el backend -->
+                <tr>
+                    <td>Árbol 1</td>
+                    <td>Duro</td>
+                    <td>Frutas</td>
+                    <td>
+                        <button onclick="editarArbol(1)">Editar</button>
+                        <button onclick="eliminarArbol(1)">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Árbol 2</td>
+                    <td>Blando</td>
+                    <td>Frutas</td>
+                    <td>
+                        <button onclick="editarArbol(2)">Editar</button>
+                        <button onclick="eliminarArbol(2)">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- Fin de la sección generada dinámicamente -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Footer -->
+    <footer th:replace="~{layout/plantilla :: footer}"/>
+    
+    <!-- Scripts adicionales -->
+    <script>
+        function editarArbol(id) {
+            // Lógica para editar un árbol, por ejemplo, redirigir a una página de edición con el ID del árbol
+            console.log("Editar árbol con ID: " + id);
+        }
+
+        function eliminarArbol(id) {
+            // Lógica para eliminar un árbol, por ejemplo, enviar una solicitud de eliminación al backend
+            console.log("Eliminar árbol con ID: " + id);
+        }
+    </script>
+</body>
+</html>

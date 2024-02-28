@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tipos de Arboles</title>
+        <link href="../styles/css/styles.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <div class="title">
+            <h1>Tipos de Arboles</h1>
+            <p>Nombre, dureza, y frutos</p>
+        </div>
+
+        <div class="form">
+            <form action="javascript:void(0);" method="POST" onsubmit="app.Add()"> 
+                <input type="text" id="add-todo" placeholder="Nombre de un arbol">
+                <input type="submit" value="Add" class="btn btn-primary">
+            </form>
+            <p>Listado de Arboles</p>
+            <p id="counter"></p>
+
+            <table>
+                <tr class="to-do">
+                    <th><h3>Tipos</h3></th>
+                </tr>
+                <tbody id="tasks">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="edit-box" role="aria-hidden">
+            <form action="javascript:void(0);" method="POST" id="save-edit">
+                <input type="text" id="edit-todo">
+                <input type="submit" value="Save" class="btn btn-success"/> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
+
+
+        
+            
+            
+            
+      

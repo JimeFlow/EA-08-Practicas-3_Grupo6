@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Página de inicio</title>
+</head>
+<body>
+
+    <header th:replace="~{layout/plantilla :: header}"/>
+
+    <!-- Navigation -->
+    <nav th:replace="~{fragmentos :: navegacion}"/>
+
+    <!-- Contenido principal -->
+    <section>
+        <h2>Formulario para agregar árboles</h2>
+        <form action="/agregar_arbol" method="POST">
+            <label for="nombre_arbol">Nombre Árbol:</label><br>
+            <input type="text" id="nombre_arbol" name="nombre_arbol"><br>
+
+            <label for="anos_madera">Dureza de Madera:</label><br>
+            <input type="text" id="anos_madera" name="anos_madera"><br>
+
+            <label for="tipo_frutos">Tipo de Frutos:</label><br>
+            <input type="text" id="tipo_frutos" name="tipo_frutos"><br>
+
+            <input type="submit" value="Agregar Árbol">
+        </form>
+    </section>
+
+    <!-- Sección para mostrar los árboles -->
+    <section th:replace="~{fragmentos :: listadoArboles}"/>
+
+    <!-- Footer -->
+    <footer th:replace="~{layout/plantilla :: footer}"/>
+    
+    <!-- Scripts adicionales -->
+    <script th:replace="~{fragmentos :: scriptsAdicionales}"/>
+</body>
+</html>

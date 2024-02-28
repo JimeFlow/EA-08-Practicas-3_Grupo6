@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tipos de Árboles</title>
+    <link href="../styles/css/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="treeModel.js"></script>
+    <script src="treesView.js"></script>
+    <script src="treeFormView.js"></script>
+    <script src="treeController.js"></script>
+</head>
+<body>
+
+<div class="title">
+    <h1>Tipos de Árboles</h1>
+    <p>Nombre, dureza y frutos</p>
+</div>
+
+<div class="form">
+    <form id="add-form"> 
+        <input type="text" id="add-todo" placeholder="Nombre de un árbol">
+        <input type="text" id="add-wood-years" placeholder="Años de madera">
+        <input type="text" id="add-fruit-type" placeholder="Tipo de frutos">
+        <input type="text" id="add-image-path" placeholder="Ruta de la imagen">
+        <input type="submit" value="Agregar" class="btn btn-primary">
+    </form>
+    <p>Listado de Árboles</p>
+    <p id="counter"></p>
+
+    <table>
+        <tr class="to-do">
+            <th><h3>Tipos</h3></th>
+        </tr>
+        <tbody id="tasks">
+        </tbody>
+    </table>
+</div>
+
+<div id="edit-box" role="aria-hidden">
+    <form id="edit-form">
+        <input type="text" id="edit-todo">
+        <input type="text" id="edit-wood-years">
+        <input type="text" id="edit-fruit-type">
+        <input type="text" id="edit-image-path">
+        <input type="submit" value="Guardar" class="btn btn-success"/> <a onclick="TreeFormView.closeEditForm()" aria-label="Cerrar">&#10006;</a>
+    </form>
+</div>
+
+</body>
+</html>

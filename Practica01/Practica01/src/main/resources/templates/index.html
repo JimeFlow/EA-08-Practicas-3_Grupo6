@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tipos de Árboles</title>
+        <link href="../styles/css/styles.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <!-- Incluir la plantilla -->
+        <script src="treeModel.js"></script>
+        <script src="treesView.js"></script>
+        <script src="treeFormView.js"></script>
+        <script src="treeController.js"></script>
+
+        <script>
+            // Inicializar la aplicación al cargar la página
+            window.onload = function () {
+                TreeController.init();
+            };
+
+            // Manejar la adición de árboles
+            document.getElementById('add-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const name = document.getElementById('add-todo').value;
+                const woodYears = document.getElementById('add-wood-years').value;
+                const fruitType = document.getElementById('add-fruit-type').value;
+                const imagePath = document.getElementById('add-image-path').value;
+                TreeController.addTree(name, woodYears, fruitType, imagePath);
+            });
+
+            // Manejar la edición de árboles
+            document.getElementById('edit-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const id = document.getElementById('edit-form').dataset.treeId;
+                const name = document.getElementById('edit-todo').value;
+                const woodYears = document.getElementById('edit-wood-years').value;
+                const fruitType = document.getElementById('edit-fruit-type').value;
+                const imagePath = document.getElementById('edit-image-path').value;
+                TreeController.saveEditedTree(id, name, woodYears, fruitType, imagePath);
+            });
+        </script>
+
+    </body>
+</html>
+
+<!--Variables base de datos
+id_arbol: Id propio del arbol se auto incrementa los id a medida que se agrega
+nombre_arbol: donde se agrega y esta la lista de los arboles agregados
+anos_madera:ese referencia a los años de la madera del arbol
+tipo_frutos:es el tipo de frutos que echa el arbol
+ruta_imagen:la ruta de la imagen a agregar
+-->
